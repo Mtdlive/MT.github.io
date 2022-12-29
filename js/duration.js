@@ -21,7 +21,7 @@
 
     document.getElementById(
       "website-duration"
-    ).innerHTML = `本站已运行 ${days} 天 ${hours} 小时 ${minutes} 分 ${seconds} 秒`;
+    ).innerHTML = `本站已安全运行 ${days} 天 ${hours} 小时 ${minutes} 分 ${seconds} 秒`;
   }
 
   update();
