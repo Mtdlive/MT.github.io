@@ -16,16 +16,16 @@
   <meta name="author" content="Mtdlive">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Awk 示例">
+    <meta name="description" content="Awk 命令的介绍、使用等相关操作">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Awk 示例">
-<meta property="og:url" content="https://mtdlive.github.io/p/5c44.html">
+<meta property="og:title" content="Awk 命令">
+<meta property="og:url" content="https://mtdlive.github.io/p/awk.html">
 <meta property="og:site_name" content="Mtdlive-Platform">
-<meta property="og:description" content="Awk 示例">
+<meta property="og:description" content="Awk 命令的介绍、使用等相关操作">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://mtdlive.github.io/img/command.png">
-<meta property="article:published_time" content="2022-10-23T05:56:54.000Z">
-<meta property="article:modified_time" content="2023-04-28T15:14:24.124Z">
+<meta property="article:published_time" content="2022-10-22T02:36:00.000Z">
+<meta property="article:modified_time" content="2023-04-28T15:20:19.070Z">
 <meta property="article:author" content="Mtdlive">
 <meta property="article:tag" content="linux">
 <meta property="article:tag" content="awk">
@@ -34,7 +34,7 @@
   
   
   
-  <title>Awk 示例 - Mtdlive-Platform</title>
+  <title>Awk 命令 - Mtdlive-Platform</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -431,13 +431,13 @@ color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/head-3.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/img/head-2.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Awk 示例"></span>
+            <span id="subtitle" data-typed-text="Awk 命令"></span>
           
         </div>
 
@@ -448,8 +448,8 @@ color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-10-23 13:56" pubdate>
-          2022年10月23日 下午
+        <time datetime="2022-10-22 10:36" pubdate>
+          2022年10月22日 上午
         </time>
       </span>
     
@@ -460,7 +460,7 @@ color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          11k 字
+          8k 字
         
       </span>
     
@@ -471,7 +471,7 @@ color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com
         
         
         
-          94 分钟
+          68 分钟
         
       </span>
     
@@ -759,374 +759,397 @@ color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Awk 示例</h1>
+            <h1 style="display: none">Awk 命令</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="awk-范例"><a href="#awk-范例" class="headerlink" title="awk 范例"></a><strong>awk 范例</strong></h1><p id="hitokoto">获取中...</p>
+                <h1 id="awk介绍"><a href="#awk介绍" class="headerlink" title="awk介绍"></a><strong>awk介绍</strong></h1><p id="hitokoto">获取中...</p>
 <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
 
 <hr>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#原文件内容：</span><br>[root@CentOS8 data]<span class="hljs-comment"># cat emp.txt </span><br>Beth:4.00:0<br>Dan:3.75:0<br>kathy:4.00:10<br>Mark:5.00:20<br>Mary:5.50:22<br>Susie:4.25:18<br>		<br><span class="hljs-comment">#以 ：为分隔符搜索 emp.txt 文件中每行的 1,3字段，且打印至终端时在其中间以 tab键为字段分隔符来显示</span><br>		<br>[root@CentOS8 data]<span class="hljs-comment"># awk -F&quot;:&quot; &#x27;&#123;print $1&quot;\t&quot;$3&#125;&#x27; emp.txt </span><br>Beth	0<br>Dan	0<br>kathy	10<br>Mark	20<br>Mary	22<br>Susie	18<br>		<br><span class="hljs-comment">#与-F作用相同的写法 -v FS=</span><br>		<br>[root@CentOS8 data]<span class="hljs-comment"># awk -v FS=&quot;:&quot; &#x27;&#123;print $1&quot;\t&quot;$3&#125;&#x27; emp.txt </span><br>Beth	0<br>Dan	0<br>kathy	10<br>Mark	20<br>Mary	22<br>Susie	18<br>		<br><span class="hljs-comment">#指定 tab键 为字段分隔符显示 emp.txt 文件的1,3字段 OFS</span><br>		<br>[root@CentOS8 data]<span class="hljs-comment"># awk -v OFS=&quot;\t&quot; -F&quot;:&quot; &#x27;&#123;print $1,$3&#125;&#x27; emp.txt </span><br>Beth	0<br>Dan	0<br>kathy	10<br>Mark	20<br>Mary	22<br>Susie	18<br>		<br><span class="hljs-comment">#同样也可以这样写：应注意有两个 -v</span><br>		<br>[root@CentOS8 data]<span class="hljs-comment"># awk -v FS=&#x27;:&#x27; -v OFS=&#x27;\t&#x27; &#x27;&#123;print $1,$3&#125;&#x27; emp.txt </span><br>Beth	0<br>Dan	0<br>kathy	10<br>Mark	20<br>Mary	22<br>Susie	18<br><br><span class="hljs-comment">#另外，还可以输入记录分隔符，指定输入时的换行符</span><br>		<br><span class="hljs-comment">#例如：以 ；为记录分隔符，只要遇到 ；就将 ；换成\n换行</span><br>		<br><span class="hljs-comment">#应注意原文件每行结尾都有一个隐藏的\n换行符,输出结果仍将\n换行符视为某行的一部分</span><br>		<br>[root@CentOS8 data]<span class="hljs-comment"># cat file.txt</span><br>student;liming<br>tech;wang;ma<br>		<br>[root@CentOS8 data]<span class="hljs-comment"># awk -v RS=&#x27;;&#x27; &#x27;&#123;print&#125;&#x27; file.txt </span><br>student<br>liming<br>tech<br>wang<br>ma<br>		<br><span class="hljs-comment">#那么如何证明这一点呢？</span><br>		<br><span class="hljs-comment">#输出行号一共为4行</span><br>		<br>[root@CentOS8 data]<span class="hljs-comment"># awk -v RS=&#x27;;&#x27; &#x27;&#123;print NR&#125;&#x27; file.txt </span><br>1<br>2<br>3<br>4<br>		<br><span class="hljs-comment">#而之前的输出字符似乎是五行 ：</span><br>		<br>[root@CentOS8 data]<span class="hljs-comment"># awk -v RS=&#x27;;&#x27; &#x27;&#123;print&#125;&#x27; file.txt </span><br>student<br>liming<br>tech<br>wang<br>ma<br>		<br><span class="hljs-comment">#结论证明：NR为显示行号，$0是显示每一行；意思是输出每一行并为其添加行号</span><br>		<br>[root@CentOS8 data]<span class="hljs-comment"># awk -v RS=&#x27;;&#x27; &#x27;&#123;print $0,NR&#125;&#x27;le.txt </span><br>student 1<br>liming<br>tech 2<br>wang 3<br>ma<br> 4<br>		<br><span class="hljs-comment">#所以第一行的liming \n tech三者被视为同一新行，此外，ma后面依旧有一个隐藏的\n换行符</span><br><br></code></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#使用ORS输出记录分隔符，输出时用指定符号代替换行符  只要遇到 ；就将其替换成@@@输出</span><br>		<br><span class="hljs-comment">#若RS不指定，默认将行尾隐藏的\n换行符替换</span><br>		<br>[root@CentOS8 data]<span class="hljs-comment"># awk -v RS=&#x27;;&#x27; -v ORS=&#x27;@@@&#x27;  &#x27;&#123;print $0&#125;&#x27; file.txt</span><br>student@@@liming<br>tech@@@wang@@@ma<br>@@@<br>		<br>		<br><span class="hljs-comment">#还可以使用NF来显示每一行的字段个数</span><br>		<br>[root@CentOS8 data]<span class="hljs-comment"># awk -v RS=&#x27;;&#x27; &#x27;&#123;print NF&#125;&#x27; file.txt </span><br>1<br>2<br>1<br>1<br><br><span class="hljs-comment">#当然，如果不添加额外的选项，仅显示原文件的话，此时只有两行，如果该行中没有空格分隔字段，那么该行会被视为一个整体 即：一个字段</span><br>		<br>[root@CentOS8 data]<span class="hljs-comment"># awk &#x27;&#123;print NF&#125;&#x27; file.txt </span><br>1<br>1<br></code></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#取出磁盘最大使用率</span><br>		<br>[root@CentOS8 data]<span class="hljs-comment"># df -h|grep &#x27;dev/sd&#x27;|awk -F% &#x27;&#123;print $1&#125;&#x27;|awk &#x27;&#123;print $5&#125;&#x27;|sort -n|tail -1</span><br>13<br>		<br><span class="hljs-comment">#另一种写法</span><br>		<br>[root@CentOS8 data]<span class="hljs-comment"># df -h|awk -F&quot; +|%&quot; &#x27;$0 ~ /^\/dev\/sd/&#123;print $5&#125;&#x27;|sort -n|tail -1</span><br>13<br>		<br></code></pre></td></tr></table></figure>
-
 <ul>
-<li><p><strong>awk常用参数</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash">-F		<span class="hljs-comment">#指明输入时选定的字段分隔符</span><br>-v Var=v 	<span class="hljs-comment">#变量赋值</span><br>FS		<span class="hljs-comment">#输入字段分隔符，默认为空格</span><br>OFS		<span class="hljs-comment">#输出字段分隔符，默认为空格</span><br>RS		<span class="hljs-comment">#输入记录分隔符，指定输入时的换行符</span><br>ORS		<span class="hljs-comment">#输出记录分隔符，输出时用指定符号代替换行符 </span><br>NF		<span class="hljs-comment">#显示字段数量</span><br>NR		<span class="hljs-comment">#记录每行行号</span><br></code></pre></td></tr></table></figure>
+<li><p>awk：Aho, Weinberger, Kernighan，报告生成器，格式化文本输出 </p>
 </li>
-<li><pre><code class="hljs">  awk除了处理一个文件，是不是可以处理多个文件呢？
-
-  同时分别显示两个文件的行号
-
-  [root@CentOS8 data]# cat file.txt 
-  student;liming
-  tech;wang;ma
+<li><p>有多种版本：New awk（nawk），GNU awk（ gawk） </p>
+</li>
+<li><p>gawk：模式扫描和处理语言 基本用法：  </p>
+<p>  awk [options]   ‘program’  var&#x3D;value   file…  </p>
+<p>  awk [options]   -f programfile    var&#x3D;value  file…  </p>
+<p>  awk [options]  ‘BEGIN{action;… }pattern{action;… }END{action;… }’  file …  </p>
+<p>  awk 程序可由：BEGIN语句块、能够使用模式匹配的通用语句块、END语句 块，共3部分组成  </p>
+<p>  program 通常是被放在单引号中 </p>
+</li>
+<li><p>选项：  </p>
+<pre><code class="hljs">  -F “分隔符” 指明输入时用到的字段分隔符  
   
-  [root@CentOS8 data]# cat emp.txt 
-  Beth:90:one
-  Dan:110:two
-
-  [root@CentOS8 data]# awk &#39;&#123;print FNR&#125;&#39; file.txt emp.txt 
-  1
-  2
-  1
-  2
-  
-  [root@CentOS8 data]# awk &#39;&#123;print $0,FNR&#125;&#39; file.txt emp.txt 
-  student;liming 1
-  tech;wang;ma 2
-  Beth:90:one 1
-  Dan:110:two 2
-</code></pre>
-</li>
-<li><pre><code class="hljs">  另外还有其他有意思的选项
-
-  有关NR、NF变量的使用
-  在以前我们曾尝试用各种基础命令来取出IP地址、磁盘利用率、软件版本类型等等如此之类的需求；而awk可以非常便捷的做到 ：
-
-  取出磁盘利用率最大的分区
-
-  [root@CentOS8 data]# df -h|awk -F&quot; +|%&quot; &#39;$0~&quot;/dev/sda&quot;&#123;print $5&#125;&#39;|sort -n|tail -1
-  13
-</code></pre>
-</li>
-<li><pre><code class="hljs">  取出用户的家目录
-
-  [root@CentOS8 data]# awk -F: &#39;&#123;print $(NF-1)&#125;&#39; /etc/passwd
-  /root
-  /bin
-  ………….
-  /home/td
-  /home/mage
-</code></pre>
-</li>
-<li><pre><code class="hljs">  取出主机ip
-
-  [root@CentOS8 data]# ifconfig ens33|awk NR==2&#39;&#123;print $NR&#125;&#39;
-  192.168.124.3
-</code></pre>
-</li>
-<li><pre><code class="hljs">  有关FILENAME的使用
-  文件内容全部替换成文件名，即输出文件个数=文件行数
-
-  [root@CentOS8 data]# awk &#39;&#123;print FILENAME&#125;&#39;  file.txt 
-  file.txt 
-  file.txt
-  
-  [root@CentOS8 data]# awk &#39;&#123;print FILENAME&#125;&#39;  emp.txt 
-  emp.txt
-  emp.txt
-
-  [root@CentOS8 data]# awk &#39;&#123;print FNR,FILENAME&#125;&#39;  emp.txt file.txt 
-  1 emp.txt
-  2 emp.txt
-  1 file.txt
-  2 file.txt
-</code></pre>
-</li>
-<li><pre><code class="hljs">  ？awk还可以加减乘除？
-
-  [root@CentOS8 data]# awk &#39;BEGIN&#123;print 3*5&#125;&#39;
-  15
-  
-  [root@CentOS8 data]# awk &#39;BEGIN&#123;print (2*5-6)/2^2&#125;&#39;
-  1
-</code></pre>
-</li>
-<li><pre><code class="hljs">  显示命令行参数的个数
-
-  [root@CentOS8 data]# awk &#39;BEGIN&#123;print ARGC&#125;&#39; 
-  1
-  
-  [root@CentOS8 data]# awk &#39;BEGIN&#123;print ARGC&#125;&#39; emp.txt 
-  2
-  
-  [root@CentOS8 data]# awk &#39;BEGIN&#123;print ARGC&#125;&#39; emp.txt file.txt 
-  3
-  
-  [root@CentOS8 data]# awk &#39;BEGIN&#123;print ARGC&#125;&#39; emp.txt file.txt pig.txt 
-  4
-</code></pre>
-</li>
-<li><pre><code class="hljs">  ARGV：数组
-
-  [root@CentOS8 data]# awk &#39;BEGIN&#123;print ARGV[0]&#125;&#39; emp.txt file.txt pig.txt 
-  awk
-  
-  [root@CentOS8 data]# awk &#39;BEGIN&#123;print ARGV[1]&#125;&#39; emp.txt file.txt pig.txt 
-  emp.txt
-  
-  [root@CentOS8 data]# awk &#39;BEGIN&#123;print ARGV[2]&#125;&#39; emp.txt file.txt pig.txt 
-  file.txt
-  
-  [root@CentOS8 data]# awk &#39;BEGIN&#123;print ARGV[3]&#125;&#39; emp.txt file.txt pig.txt 
-  pig.txt
-</code></pre>
-</li>
-<li><pre><code class="hljs">  FNR	分别记录多个文件行号
-  FILENAME	当前文件名
-  ARGC	终端输入时命令行参数的个数
-         BEGIN	加减乘除等运算
-  ARGV	数组，命令行的各个参数
-</code></pre>
-</li>
-<li><pre><code class="hljs">  除了可以使用awk的内置变量，还可以自定义变量
-
-  [root@CentOS8 data]# awk -F: -v user=&quot;username : &quot; &#39;&#123;print user$1&#125;&#39; /etc/passwd
-  username : root
-  username : bin
-  username : daemon
-  username : adm
-  ……………………………
-</code></pre>
-</li>
-<li><pre><code class="hljs">  自定义多个变量
-
-  [root@CentOS8 data]# awk -F: -v user=&quot;username : &quot; -v usid=&quot;useruid : &quot; -v ugid= ：&quot; usergid  &quot; &#39;&#123;print user$1&quot;\t&quot;usid$3&quot;\t&quot;ugid$4&#125;&#39; /etc/passwd
-  username : root	useruid : 0	 usergid ：0
-  username : bin	useruid : 1	 usergid  ：1
-  username : daemon	useruid : 2	 usergid  ：2
-  username : adm	useruid : 3	 usergid  ：4
-  ……………………………………
-</code></pre>
-</li>
-<li><pre><code class="hljs">  也可以将变量定义在program中
-
-  [root@CentOS8 data]# awk -F: &#39;&#123;user=&quot;username : &quot;;usid=&quot;useruid : &quot;;ugid=&quot; usergid ：&quot;;print user$1&quot;\t&quot;usid$3&quot;\t&quot;ugid$4&#125;&#39; /etc/passwd
-  username : root	useruid : 0	 usergid ：0
-  username : bin	useruid : 1	 usergid ：1
-  username : daemon	useruid : 2	 usergid ：2
-  username : adm	useruid : 3	 usergid ：4
-  ………………………………………………
-</code></pre>
-</li>
-<li><pre><code class="hljs">  倘若你已经在shell中定义过要使用的变量，同样在awk中你也可以调用它
-
-  [root@CentOS8 data]# user=&quot;username:&quot; uuid=&quot;useruid:&quot; ugid=&quot;usergid:&quot;;awk -F: -v i=$user -v u=$uuid -v g=$ugid &#39;&#123;print i$1&quot;\t&quot;u$3&quot;\t&quot;g$4&#125;&#39; /etc/passwd
-  username:root	useruid:0	usergid:0
-  username:bin	useruid:1	usergid:1
-  username:daemon	useruid:2	usergid:2
-  username:adm	useruid:3	usergid:4
-  …………………………………………
-</code></pre>
-</li>
-<li><pre><code class="hljs">  将执行的命令放在一个文件中，使用awk调用该文件一样OK
-
-  [root@CentOS8 data]# vim awk.txt
-  
-  [root@CentOS8 data]# cat awk.txt 
-  &#123;user=&quot;username : &quot;;usid=&quot;useruid : &quot;;ugid=&quot; usergid  &quot;;print user$1&quot;\t&quot;usid$3&quot;\t&quot;ugid$4&#125;
-
-  [root@CentOS8 data]# awk -F: -f awk.txt /etc/passwd
-  username : root	useruid : 0	 usergid  0
-  username : bin	useruid : 1	 usergid  1
-  username : daemon	useruid : 2	 usergid  2
-  username : adm	useruid : 3	 usergid  4
-  ………………………………
-</code></pre>
-</li>
-<li><p>   printf命令</p>
-<figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs mel">格式化输出：printf “FORMAT”，item1，item2，….<br>	必须指定FORMAT<br>	不主动换行，需手动给出\n换行符<br>	FORMAT中需要分别为后面每个item指定格式符<br>格式符：与item相呼应<br>	%c：显示字符的ASCII码（不常用）<br>	%d，%i：显示十进制整数（常用）<br>	%e，%E：显示科学计数法数值<br>	%f：显示为浮点数（小数位）<br>	%g，%G：以科学计数法或浮点形式显示数值（也许你需要将小数精确至<span class="hljs-number">0.001</span>什么的）%s：显示字符串%u：无符号整数%%：显示%自身<br>修饰符：<br>	#[.#]	第一个数字控制显示的宽度；第二个#表示小数点后精度 %3<span class="hljs-number">.1</span>f<br>	    -	左对齐（默认为右对齐）%-<span class="hljs-number">15</span>s<br>	   +	显示数值的正负号 %+d<br></code></pre></td></tr></table></figure></li>
-<li><pre><code class="hljs">  默认向右对其显示
-
-  [root@CentOS8 data]# cat emp.txt 
-  Beth:-90:233:-12:seur:out
-  Dan:110:-7:66:root
-  
-  [root@CentOS8 data]# awk -F: &#39;&#123;printf &quot;%4s %10d %5d\n&quot;,$1,$3,$4&#125;&#39; emp.txt
-  Beth        233   -12
-   Dan        -7    66
-</code></pre>
-</li>
-<li><pre><code class="hljs">  加-左对齐
-
-  [root@CentOS8 data]# awk -F: &#39;&#123;printf &quot;%-4s     %-10d %d\n&quot;,$1,$3,$4&#125;&#39; emp.txt
-  Beth     233        -12
-  Dan     -7        66
-</code></pre>
-</li>
-<li><pre><code class="hljs">  显示’数值‘的正负
-
-  [root@CentOS8 data]# awk -F: &#39;&#123;printf &quot;%-5s  %5+d %5+d\n&quot;,$1,$3,$4&#125;&#39; emp.txt 
-  Beth    +233   -12
-  Dan       -7   +66
-</code></pre>
-</li>
-<li><pre><code class="hljs">  之前操作的示例中有计算加减乘除的展示
-  那么，awk中的算术操作符以及其他的操作符有哪些：
+  -v  var=value 变量赋值
 </code></pre>
 </li>
 </ul>
-<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><code class="hljs asciidoc">x+y	加法<br>x-y	减法<br>x*y	乘法<br>x/y	除法<br>x^y	幂运算（指数）<br>x%y	取模（除余）<br>-x	转换成负数<br>+x	将字符串转换为数值<br><br>赋值操作符：<br><br><span class="hljs-section">=	右边赋值给左边</span><br>+=	先加，再赋值<br>-=	先减，再赋值<br>*=	先乘，再赋值<br>/=	先除，再赋值<br>%=	先取模，再赋值<br>^=	先幂运算，再赋值<br>++	递增操作<br><span class="hljs-bullet">--	</span>递减操作<br><br>比较操作符：<br><br><span class="hljs-section">==	判断相等</span><br>！=	判断不等<br>\&gt;	判断大于<br>\&gt;=	判断大于等于<br>&lt;	判断小于<br>&lt;=	判断小于等于<br><br>模式匹配符：<br><br>~	左边是否和右边匹配包含<br>！~	是否不匹配<br><br>逻辑操作符：<br><br>&amp;&amp;	逻辑与<br>||	逻辑或<br>！	逻辑非<br></code></pre></td></tr></table></figure>
-
+<h1 id="awk语言"><a href="#awk语言" class="headerlink" title="awk语言"></a><strong>awk语言</strong></h1><ul>
+<li><p>基本格式：awk [options] ‘program’ file… </p>
+</li>
+<li><p>Program：pattern{action statements;..} </p>
+</li>
+<li><p>pattern和action </p>
 <ul>
-<li><pre><code class="hljs">  比较下列两个命令语句有何区别
-
-  [root@CentOS8 data]# awk &#39;BEGIN&#123;i=0;print ++i,i&#125;&#39;
-  [root@CentOS8 data]# awk &#39;BEGIN&#123;i=0;print i++,i&#125;&#39;
-</code></pre>
+<li><p>pattern部分决定动作语句何时触发及触发事件  </p>
+<p>  BEGIN,END </p>
 </li>
-<li><pre><code class="hljs">  第一个是先加，之后将加得的数和i打印
-  第二个是先打印i的值，再将i加得的数打印
-
-  [root@CentOS8 data]# awk &#39;BEGIN&#123;i=0;print ++i,i&#125;&#39;
-  1 1
-  [root@CentOS8 data]# awk &#39;BEGIN&#123;i=0;print i++,i&#125;&#39;
-  0 1
-</code></pre>
-</li>
-<li><pre><code class="hljs">  awk中的PATTERN模式
-</code></pre>
+<li><p>action statements对数据进行处理，放在{}内指明  </p>
+<p>  print, printf</p>
 </li>
 </ul>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs awk">PATTERN：根据pattern条件，过滤匹配的行；然后再做处理<br>	<span class="hljs-number">1</span>：若pattern未指定：视为空模式，匹配所有行<br>	<span class="hljs-number">2</span>：<span class="hljs-regexp">/relational expression/</span>：仅处理能够被模式匹配到的行，且需要用<span class="hljs-regexp">//</span>扩入<br>	<span class="hljs-number">3</span>：relational expression：关系表达式，仅结果为真，才会进行处理<br>	真：结果为非<span class="hljs-number">0</span>值，非空字符串都为真<br>	假：结果为空字符串或<span class="hljs-number">0</span>值都为<br>	<span class="hljs-number">4</span>：line ranges：行范围<br>	startine，endline：<span class="hljs-regexp">/pat1/</span>，<span class="hljs-regexp">/pat2/</span>不支持直接给出数字格式。<br>	<span class="hljs-number">5</span>：<span class="hljs-keyword">BEGIN</span>/<span class="hljs-keyword">END</span>模式<br>	<span class="hljs-keyword">BEGIN</span>&#123;&#125;：仅在开始处理文件中的文本之前执行一次<br>	<span class="hljs-keyword">END</span>&#123;&#125;：仅在文本处理完成之后执行一次。<br></code></pre></td></tr></table></figure>
-<ul>
-<li><pre><code class="hljs">  匹配/etc/passwd 中所有行的第N个字段所在的那行包含root的
-
-  [root@CentOS8 data]# awk  -F: &#39;$0 ~ /root/&#123;print $1&#125;&#39;  /etc/passwd
-  root
-  operator
-</code></pre>
 </li>
-<li><pre><code class="hljs">  当然，如果匹配一个不存在的字符串是没有反应的
-
-  [root@CentOS8 data]# awk  -F: &#39;$0 ~ /kxxxla/&#123;print $1&#125;&#39;  /etc/passwd
-
-  [root@CentOS8 data]# awk  -F: &#39;$0 ~ /root/&#123;print $3&#125;&#39;  /etc/passwd
-  0
-  11
+<li><p>分割符、域和记录 </p>
+<ul>
+<li><p>awk执行时，由分隔符分隔的字段（域）标记$1,$2…$n称为域标识。$0 为所有域，注意：此时和shell中变量$符含义不同 </p>
+</li>
+<li><p>文件的每一行称为记录 </p>
+<ul>
+<li>省略action，则默认执行 print $0 的操作</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="awk工作原理"><a href="#awk工作原理" class="headerlink" title="awk工作原理"></a><strong>awk工作原理</strong></h1><ul>
+<li><p>第一步：执行BEGIN{action;… }语句块中的语句 </p>
+</li>
+<li><p>第二步：从文件或标准输入(stdin)读取一行，然后执行pattern{ action;… }语句块， 它逐行扫描文件，从第一行到最后一行重复这个过程，直到文件全部被读取完毕。  </p>
+</li>
+<li><p>第三步：当读至输入流末尾时，执行END{action;…}语句块 </p>
+</li>
+<li><p>BEGIN语句块在awk开始从输入流中读取行之前被执行，这是一个可选的语句块， 比如变量初始化、打印输出表格的表头等语句通常可以写在BEGIN语句块中 </p>
+</li>
+<li><p>END语句块在awk从输入流中读取完所有的行之后即被执行，比如打印所有行的 分析结果这类信息汇总都是在END语句块中完成，它也是一个可选语句块  </p>
+</li>
+<li><p>pattern语句块中的通用命令是最重要的部分，也是可选的。如果没有提供 pattern语句块，则默认执行{ print }，即打印每一个读取到的行，awk读取的每 一行都会执行该语句块</p>
+</li>
+</ul>
+<h1 id="awk要点"><a href="#awk要点" class="headerlink" title="awk要点"></a><strong>awk要点</strong></h1><ul>
+<li><p>print格式：print item1, item2, … </p>
+</li>
+<li><p>要点： </p>
+<p>  (1) 逗号分隔符 </p>
+<p>  (2) 输出item可以字符串，也可是数值；当前记录的字段、变量或awk的表达式 </p>
+<p>  (3) 如省略item，相当于print $0</p>
+</li>
+</ul>
+<h1 id="awk变量"><a href="#awk变量" class="headerlink" title="awk变量"></a><strong>awk变量</strong></h1><ul>
+<li><p>变量：内置和自定义变量 </p>
+</li>
+<li><p>FS：输入字段分隔符，默认为空白字符  </p>
+<p>  awk -v FS&#x3D;’:’  ‘{print $1,FS,$3}’ &#x2F;etc&#x2F;passwd  </p>
+<p>  awk  –F:   ‘{print $1,$3,$7}’   &#x2F;etc&#x2F;passwd </p>
+</li>
+<li><p>OFS：输出字段分隔符，默认为空白字符  </p>
+<p>  awk  -v FS&#x3D;’:’  -v OFS&#x3D;’:’  ‘{print $1,$3,$7}’   &#x2F;etc&#x2F;passwd </p>
+</li>
+<li><p>RS：输入记录分隔符，指定输入时的换行符  </p>
+<p>  awk -v RS&#x3D;’ ‘ ‘{print }’ &#x2F;etc&#x2F;passwd </p>
+</li>
+<li><p>ORS：输出记录分隔符，输出时用指定符号代替换行符  </p>
+<p>  awk -v RS&#x3D;’ ‘ -v ORS&#x3D;’###’  ‘{print $0}’ &#x2F;etc&#x2F;passwd </p>
+</li>
+<li><p>NF：字段数量  </p>
+<p>  awk  -F：’{print NF}’  &#x2F;etc&#x2F;fstab 引用变量时，变量前不需加$  </p>
+<p>  awk  -F：’{print $(NF-1)}’  &#x2F;etc&#x2F;passwd </p>
+</li>
+<li><p>NR：记录号       </p>
+<p>  awk ‘{print NR}’  &#x2F;etc&#x2F;fstab ; awk END ‘{print NR}’  &#x2F;etc&#x2F;fstab </p>
+</li>
+<li><p>FNR：各文件分别计数,记录号  </p>
+<p>  awk ‘{print FNR}’  &#x2F;etc&#x2F;fstab &#x2F;etc&#x2F;inittab </p>
+</li>
+<li><p>FILENAME：当前文件名  </p>
+<p>  awk ‘{print FILENAME}’  &#x2F;etc&#x2F;fstab </p>
+</li>
+<li><p>ARGC：命令行参数的个数  </p>
+<p>  awk ‘{print ARGC}’  &#x2F;etc&#x2F;fstab &#x2F;etc&#x2F;inittab  </p>
+<p>  awk ‘BEGIN {print ARGC}’  &#x2F;etc&#x2F;fstab &#x2F;etc&#x2F;inittab </p>
+</li>
+<li><p>ARGV：数组，保存的是命令行所给定的各参数  </p>
+<p>  awk ‘BEGIN {print ARGV[0]}’  &#x2F;etc&#x2F;fstab &#x2F;etc&#x2F;inittab  </p>
+<p>  awk ‘BEGIN {print ARGV[1]}’  &#x2F;etc&#x2F;fstab &#x2F;etc&#x2F;inittab </p>
+</li>
+<li><p>自定义变量(区分字符大小写)  </p>
+<p>  (1) -v var&#x3D;value    </p>
+<p>  (2) 在program中直接定义</p>
+</li>
+</ul>
+<h1 id="printf命令"><a href="#printf命令" class="headerlink" title="printf命令"></a><strong>printf命令</strong></h1><ul>
+<li><p>格式化输出：printf “FORMAT”, item1, item2, …  </p>
+<p>  (1) 必须指定FORMAT  </p>
+<p>  (2) 不会自动换行，需要显式给出换行控制符，\n  </p>
+<p>  (3) FORMAT中需要分别为后面每个item指定格式符 </p>
+</li>
+<li><p>格式符：与item一一对应  </p>
+<p>  %c：显示字符的ASCII码  </p>
+<p>  %d, %i：显示十进制整数  </p>
+<p>  %e, %E：显示科学计数法数值   </p>
+<p>  %f：显示为浮点数  </p>
+<p>  %g, %G：以科学计数法或浮点形式显示数值  </p>
+<p>  %s：显示字符串  </p>
+<p>  %u：无符号整数  </p>
+<p>  %%：显示%自身 </p>
+</li>
+<li><p>修饰符  </p>
+<p>  #[.#] 第一个数字控制显示的宽度；第二个#表示小数点后精度，%3.1f  </p>
+<p>  - 左对齐（默认右对齐） %-15s </p>
+<p>  + 显示数值的正负符号 %+d</p>
+</li>
+</ul>
+<h1 id="操作符"><a href="#操作符" class="headerlink" title="操作符"></a><strong>操作符</strong></h1><ul>
+<li><p>算术操作符：  </p>
+<p>  x+y, x-y, x*y, x&#x2F;y, x^y, x%y  </p>
+<p>  - x：转换为负数  </p>
+<p>  + x：将字符串转换为数值 </p>
+</li>
+<li><p>字符串操作符：没有符号的操作符，字符串连接 </p>
+</li>
+<li><p>赋值操作符：  </p>
+<p>  &#x3D;, +&#x3D;, -&#x3D;, *&#x3D;, &#x2F;&#x3D;, %&#x3D;, ^&#x3D;，++, – </p>
+</li>
+<li><p>比较操作符：   </p>
+<p>  &#x3D;&#x3D;, !&#x3D;, &gt;, &gt;&#x3D;, &lt;, &lt;&#x3D; </p>
+</li>
+<li><p>模式匹配符：        </p>
+<p>  ~：左边是否和右边匹配，包含         </p>
+<p>  !~：是否不匹配 </p>
+</li>
+<li><p>逻辑操作符：与&amp;&amp;，或||，非! </p>
+</li>
+<li><p>条件表达式（三目表达式）     </p>
+<p>  selector?if-true-expression:if-false-expression </p>
+<p>  • 示例：     </p>
+<p>  awk -F: ‘{$3&gt;&#x3D;1000?usertype&#x3D;”Common User”:usertype&#x3D;”SysUser”;<br>  printf “%15s:%-s\n”,$1,usertype}’   &#x2F;etc&#x2F;passwd</p>
+</li>
+</ul>
+<h1 id="awk-PATTERN"><a href="#awk-PATTERN" class="headerlink" title="awk PATTERN"></a><strong>awk PATTERN</strong></h1><ul>
+<li><p>PATTERN:根据pattern条件，过滤匹配的行，再做处理     </p>
+<p>  (1)如果未指定：空模式，匹配每一行     </p>
+<p>  (2) &#x2F;regular expression&#x2F;：仅处理能够模式匹配到的行，需要用&#x2F;  &#x2F;括起来  </p>
+<pre><code class="hljs">  awk   &#39;/^UUID/&#123;print $1&#125;&#39;     /etc/fstab  
   
-  [root@CentOS8 data]# awk  -F: &#39;$0 ~ /root/&#123;print $5&#125;&#39;  /etc/passwd
-  root
-  operator
+  awk   &#39;!/^UUID/&#123;print $1&#125;&#39;   /etc/fstab     
+  
 </code></pre>
-</li>
-<li><pre><code class="hljs">  查看/etc/passwd文件便可清楚了解
-
-  [root@CentOS8 data]# cat /etc/passwd
-  root:x:0:0:root:/root:/bin/bash
-  ………………………………….
-  operator:x:11:0:operator:/root:/sbin/nologin
+<p>  (3) relational expression: 关系表达式，结果为“真”才会被处理  </p>
+<pre><code class="hljs">  真：结果为非0值，非空字符串  
+  
+  假：结果为空字符串或0值  
 </code></pre>
-</li>
-<li><pre><code class="hljs">  匹配/etc/passwd 中所有行的第N个字段所在的那行为0的
-
-  [root@CentOS8 data]# awk -F: &#39;$4==0&#39; /etc/passwd
-  root:x:0:0:root:/root:/bin/bash
-  sync:x:5:0:sync:/sbin:/bin/sync
-  shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
-  halt:x:7:0:halt:/sbin:/sbin/halt
-  operator:x:11:0:operator:/root:/sbin/nologin
-
-  [root@CentOS8 data]# awk -F: &#39;$3==0&#39; /etc/passwd
-  root:x:0:0:root:/root:/bin/bash
-</code></pre>
-</li>
-<li><pre><code class="hljs">  于此之外，使用！~可以匹配相反的效果
-
-  [root@CentOS8 data]# awk -F: &#39;!$4==0&#39; /etc/passwd
-  bin:x:1:1:bin:/bin:/sbin/nologin
-  daemon:x:2:2:daemon:/sbin:/sbin/nologin
-  adm:x:3:4:adm:/var/adm:/sbin/nologin
-  lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
-</code></pre>
-</li>
-<li><pre><code class="hljs">  匹配/etc/passwd 中所有行的第N个字段所在的那行为非0的
-
-  [root@CentOS8 data]# awk -F: &#39;!$4==0&#39; /etc/passwd
-  bin:x:1:1:bin:/bin:/sbin/nologin
-  daemon:x:2:2:daemon:/sbin:/sbin/nologin
-  adm:x:3:4:adm:/var/adm:/sbin/nologin
-  lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
-  …………………………………..过多不做演示
-</code></pre>
-</li>
-<li><pre><code class="hljs">  匹配/etc/passwd 中所有行的第N个字段所在的那行不包含root的
-
-  [root@CentOS8 data]# awkawk  -F: &#39;$0 !~ /root/&#123;print $5&#125;&#39; tc/passwd
-  bin
-  daemon
-  adm
-  ………..过多不做演示
-</code></pre>
-</li>
-<li><pre><code class="hljs">  有关逻辑与或非的示例：
-  匹配/etc/passwd中所有行的第三字段数值在0-5之间的，打印符合条件的行的第一字段
-
-  [root@CentOS8 data]# awk -F: &#39;$3&gt;=0 &amp;&amp; $3&lt;=5 &#123;print $1&#125;&#39; /etc/passwd|tr &#39;\n&#39; &#39; &#39;
-  root bin daemon adm lp sync 
-</code></pre>
-</li>
-<li><pre><code class="hljs">  匹配/etc/passwd中所有行的第三字段的数值在小于等于0或大于等于1000之间的，打印符合条件的行的第一字段
-
-  [root@CentOS8 data]# awk -F: &#39;$3&lt;=0 || $3&gt;=1000 &#123;print $1&#125;&#39; /etc/passwd
-  root
-  nobody
-  td
-</code></pre>
-</li>
-<li><pre><code class="hljs">  匹配/etc/passwd中所有行的第三字段数值在小于1000的，取反变为大于等于1000的，打印符合条件的行的第一字段
-
-  [root@CentOS8 data]# awk -F: &#39;!($3&lt;1000) &#123;print $1&#125;&#39; /etc/passwd
-  nobody
-  td
-</code></pre>
-</li>
-<li><pre><code class="hljs">  有关PATTERN模式的示例：
-
-  原文件：
+<p>  (4) line ranges：行范围  </p>
+<pre><code class="hljs">  startline,endline：/pat1/,/pat2/ 不支持直接给出数字格式  
+  
+  awk -F: ‘/^root\&gt;/,/^nobody\&gt;/&#123;print $1&#125;&#39; /etc/passwd  
+  
+  awk -F: ‘(NR&gt;=10&amp;&amp;NR&lt;=20)&#123;print NR,$1&#125;&#39; /etc/passwd 
+  
+  (5) BEGIN/END模式  
+  
+  BEGIN&#123;&#125;：仅在开始处理文件中的文本之前执行一次  
+  
+  END&#123;&#125;：仅在文本处理完成之后执行一次
 </code></pre>
 </li>
 </ul>
-<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs ini"><span class="hljs-section">[root@CentOS8 data]</span><span class="hljs-comment"># cat /etc/fstab </span><br><br><span class="hljs-comment">#</span><br><span class="hljs-comment"># /etc/fstab</span><br><span class="hljs-comment"># Created by anaconda on Wed Sep 25 20:03:53 2019</span><br><span class="hljs-comment">#</span><br><span class="hljs-comment"># Accessible filesystems, by reference, are maintained under &#x27;/dev/disk/&#x27;.</span><br><span class="hljs-comment"># See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info.</span><br><span class="hljs-comment">#</span><br><span class="hljs-comment"># After editing this file, run &#x27;systemctl daemon-reload&#x27; to update systemd</span><br><span class="hljs-comment"># units generated from this file.</span><br><span class="hljs-comment">#</span><br><span class="hljs-attr">UUID</span>=e2e0f44d-<span class="hljs-number">0</span>ae9-<span class="hljs-number">4159</span>-a99f-<span class="hljs-number">6</span>a1c72dcccbe /                       xfs     defaults        <span class="hljs-number">0</span> <span class="hljs-number">0</span><br><span class="hljs-attr">UUID</span>=deb9638d-<span class="hljs-number">76</span>ba-<span class="hljs-number">4370</span>-<span class="hljs-number">90</span>f1-<span class="hljs-number">962</span>cd4ab55b5 /boot                   ext4    defaults        <span class="hljs-number">1</span> <span class="hljs-number">2</span><br><span class="hljs-attr">UUID</span>=<span class="hljs-number">40</span>aac826-ee18-<span class="hljs-number">4927</span>-<span class="hljs-number">8574</span>-c8618c4ea1e7 /data                   xfs     defaults        <span class="hljs-number">0</span> <span class="hljs-number">0</span><br><span class="hljs-attr">UUID</span>=d12cdea2-cb68-<span class="hljs-number">4</span>aa7-<span class="hljs-number">97</span>cd-<span class="hljs-number">9002297</span>faf05 swap                    swap    defaults        <span class="hljs-number">0</span> <span class="hljs-number">0</span><br></code></pre></td></tr></table></figure>
-
-<ul>
-<li><pre><code class="hljs">  仅匹显示以UUID开头的行
-
-  [root@CentOS8 data]# awk &#39;/^UUID/&#123;print $1&#125;&#39; /etc/fstab 
-  UUID=e2e0f44d-0ae9-4159-a99f-6a1c72dcccbe
-  UUID=deb9638d-76ba-4370-90f1-962cd4ab55b5
-  UUID=40aac826-ee18-4927-8574-c8618c4ea1e7
-  UUID=d12cdea2-cb68-4aa7-97cd-9002297faf05
+<h1 id="awk-action"><a href="#awk-action" class="headerlink" title="awk action"></a><strong>awk action</strong></h1><ul>
+<li><p>常用的action分类 </p>
+<p>   (1) Expressions：算术，比较表达式等 </p>
+<p>   (2) Control statements：if, while等 </p>
+<p>   (3) Compound statements：组合语句 </p>
+<p>   (4) input statements </p>
+<p>   (5) output statements：print等</p>
+</li>
+</ul>
+<h1 id="awk控制语句示例"><a href="#awk控制语句示例" class="headerlink" title="awk控制语句示例"></a><strong>awk控制语句示例</strong></h1><p>{ statements;… } 组合语句 </p>
+<p>if(condition) {statements;…}  </p>
+<p>if(condition) {statements;…} else {statements;…} </p>
+<p>while(conditon) {statments;…} </p>
+<p>do {statements;…} while(condition) </p>
+<p>for(expr1;expr2;expr3) {statements;…} </p>
+<p>break </p>
+<p>continue </p>
+<p>delete array[index] </p>
+<p>delete array </p>
+<p>exit </p>
+<h1 id="awk控制语句if-else"><a href="#awk控制语句if-else" class="headerlink" title="awk控制语句if-else"></a><strong>awk控制语句if-else</strong></h1><ul>
+<li><p>语法：if(condition){statement;…}[else statement]    </p>
+<p>  if(condition1){statement1}else if(condition2){statement2}else{statement3} </p>
+</li>
+<li><p>使用场景：对awk取得的整行或某个字段做条件判断 </p>
+</li>
+<li><p>示例： </p>
+<p>  awk -F: ‘{if($3&gt;&#x3D;1000)print $1,$3}’ &#x2F;etc&#x2F;passwd </p>
+<p>  awk -F: ‘{if($NF&#x3D;&#x3D;”&#x2F;bin&#x2F;bash”) print $1}’ &#x2F;etc&#x2F;passwd </p>
+<p>  awk ‘{if(NF&gt;5) print $0}’ &#x2F;etc&#x2F;fstab </p>
+<p>  awk -F: ‘{if($3&gt;&#x3D;1000) {printf “Common user: %s\n”,$1} else {printf “root or Sysuser: %s\n”,$1}}’ &#x2F;etc&#x2F;passwd </p>
+<p>  awk -F: ‘{if($3&gt;&#x3D;1000) printf “Common user: %s\n”,$1; else printf “root or Sysuser: %s\n”,$1}’ &#x2F;etc&#x2F;passwd </p>
+<p>  df -h|awk -F% ‘&#x2F;^/dev&#x2F;{print $1}’|awk ‘$NF&gt;&#x3D;80{print $1,$5}’ </p>
+<p>  awk ‘BEGIN{ test&#x3D;100;if(test&gt;90){print “very good”}<br>  else if(test&gt;60){ print “good”}else{print “no pass”}}’</p>
+</li>
+</ul>
+<h1 id="awk控制语句while"><a href="#awk控制语句while" class="headerlink" title="awk控制语句while"></a><strong>awk控制语句while</strong></h1><ul>
+<li><p>while循环 </p>
+</li>
+<li><p>语法：while(condition){statement;…} </p>
+</li>
+<li><p>条件“真”，进入循环；条件“假”，退出循环 </p>
+</li>
+<li><p>使用场景：  </p>
+<p>  对一行内的多个字段逐一类似处理时使用  </p>
+<p>  对数组中的各元素逐一处理时使用 </p>
+</li>
+<li><p>示例：  </p>
+<p>  awk ‘&#x2F;^[[:space:]]*linux16&#x2F;{i&#x3D;1;while(i&lt;&#x3D;NF)<br>  {print $i,length($i); i++}}’ &#x2F;etc&#x2F;grub2.cfg<br><br>  awk  ‘&#x2F;^[[:space:]]*linux16&#x2F;{i&#x3D;1;while(i&lt;&#x3D;NF)<br>  {if(length($i)&gt;&#x3D;10){print $i,length($i)}; i++}}’ &#x2F;etc&#x2F;grub2.cfg</p>
+</li>
+</ul>
+<h1 id="awk控制语句do-while"><a href="#awk控制语句do-while" class="headerlink" title="awk控制语句do-while"></a><strong>awk控制语句do-while</strong></h1><ul>
+<li><p>do-while循环 </p>
+</li>
+<li><p>语法：do {statement;…}while(condition) </p>
+</li>
+<li><p>意义：无论真假，至少执行一次循环体 </p>
+</li>
+<li><p>示例：      </p>
+<p>  awk ‘BEGIN{ total&#x3D;0;i&#x3D;0;do{ total+&#x3D;i;i++;}while(i&lt;&#x3D;100);print total}’</p>
+</li>
+</ul>
+<h1 id="awk控制语句for"><a href="#awk控制语句for" class="headerlink" title="awk控制语句for"></a><strong>awk控制语句for</strong></h1><ul>
+<li><p>for循环 </p>
+</li>
+<li><p>语法：for(expr1;expr2;expr3) {statement;…} </p>
+</li>
+<li><p>常见用法：  </p>
+<p>  for(variable assignment;condition;iteration process)    {for-body} </p>
+</li>
+<li><p>特殊用法：能够遍历数组中的元素  </p>
+<p>  语法：for(var in array) {for-body} </p>
+</li>
+<li><p>示例：   </p>
+<p>  awk ‘&#x2F;^[[:space:]]*linux16&#x2F;{for(i&#x3D;1;i&lt;&#x3D;NF;i++) {print $i,length($i)}}’ &#x2F;etc&#x2F;grub2.cfg</p>
+</li>
+</ul>
+<h1 id="awk控制语句switch"><a href="#awk控制语句switch" class="headerlink" title="awk控制语句switch"></a><strong>awk控制语句switch</strong></h1><ul>
+<li><p>switch语句 </p>
+</li>
+<li><p>语法：switch(expression) {case VALUE1 or &#x2F;REGEXP&#x2F;: statement1; case VALUE2 or &#x2F;REGEXP2&#x2F;: statement2; …; default: statementn} </p>
+</li>
+<li><p>break和continue     </p>
+<p>  awk ‘BEGIN{sum&#x3D;0;for(i&#x3D;1;i&lt;&#x3D;100;i++)<br>  {if(i%2&#x3D;&#x3D;0)continue;sum+&#x3D;i}print sum}’<br><br>  awk ‘BEGIN{sum&#x3D;0;for(i&#x3D;1;i&lt;&#x3D;100;i++)<br>  {if(i&#x3D;&#x3D;66)break;sum+&#x3D;i}print sum}’</p>
+</li>
+</ul>
+<h1 id="awk控制语句break-x2F-continue"><a href="#awk控制语句break-x2F-continue" class="headerlink" title="awk控制语句break&#x2F;continue"></a><strong>awk控制语句break&#x2F;continue</strong></h1><ul>
+<li><p>break [n] </p>
+</li>
+<li><p>continue [n] </p>
+</li>
+<li><p>next:      </p>
+<p>  提前结束对本行处理而直接进入下一行处理（awk自身循环）</p>
+</li>
+</ul>
+<p>示例：  </p>
+<pre><code class="hljs">    awk -F: &#39;&#123;if($3%2!=0) next; print $1,$3&#125;&#39; /etc/passwd 
+</code></pre>
+<h1 id="awk数组"><a href="#awk数组" class="headerlink" title="awk数组"></a><strong>awk数组</strong></h1><ul>
+<li><p>关联数组：array[index-expression] </p>
+</li>
+<li><p>index-expression: </p>
+<p>   (1) 可使用任意字符串；字符串要使用双引号括起来 </p>
+<p>   (2) 如果某数组元素事先不存在，在引用时，awk会自动创建此元素，并将其值 初始化为“空串” </p>
+<p>   (3) 若要判断数组中是否存在某元素，要使用“index in array”格式进行遍历 </p>
+</li>
+<li><p>示例： </p>
+<p>  weekdays[“mon”]&#x3D;”Monday”  </p>
+<p>  awk ‘BEGIN{weekdays[“mon”]&#x3D;”Monday”;weekdays[“tue”]&#x3D;”Tuesday”;  print weekdays[“mon”]}‘ </p>
+<p>  awk ‘!line[$0]++’  dupfile </p>
+<p>  awk ‘{!line[$0]++;print $0, line[$0]}’  dupfile </p>
+</li>
+<li><p>若要遍历数组中的每个元素，要使用for循环 \</p>
+</li>
+<li><p>for(var in array) {for-body} </p>
+</li>
+<li><p>注意：var会遍历array的每个索引 </p>
+</li>
+<li><p>示例：      </p>
+<p>  awk ‘BEGIN{weekdays[“mon”]&#x3D;”Monday”;weekdays[“tue”]&#x3D;”Tuesday”;<br>  for(i in weekdays) {print weekdays[i]}}’<br><br>  netstat -tan | awk ‘&#x2F;^tcp&#x2F;{state[$NF]++}<br>      END{for(i in state) { print i,state[i]}}’<br><br>  awk  ‘{ip[$1]++}END{for(i in ip) {print i,ip[i]}}’   &#x2F;var&#x2F;log&#x2F;httpd&#x2F;access_log</p>
+</li>
+</ul>
+<h1 id="awk函数"><a href="#awk函数" class="headerlink" title="awk函数"></a><strong>awk函数</strong></h1><ul>
+<li><p>数值处理：  </p>
+<p>  rand()：返回0和1之间一个随机数    </p>
+<p>  awk  ‘BEGIN{srand(); for (i&#x3D;1;i&lt;&#x3D;10;i++)print int(rand()*100) }’  </p>
+</li>
+<li><p>字符串处理： </p>
+<p>   length([s])：返回指定字符串的长度 </p>
+<p>   sub(r,s,[t])：对t字符串搜索r表示模式匹配的内容，并将第一个匹配内容替换为s  </p>
+<p>  echo “2008:08:08 08:08:08” | awk ‘sub(&#x2F;:&#x2F;,”-“,$1)’  </p>
+<p>  echo “2008:08:08 08:08:08” | awk ‘{sub(&#x2F;:&#x2F;,”-“,$1);print $0}’ </p>
+<p>   gsub(r,s,[t])：对t字符串进行搜索r表示的模式匹配的内容，并全部替换为s所表 示的内容  </p>
+<p>  echo “2008:08:08 08:08:08” | awk ‘gsub(&#x2F;:&#x2F;,”-“,$0)’  </p>
+<p>  echo “2008:08:08 08:08:08” | awk ‘{gsub(&#x2F;:&#x2F;,”-“,$0);print $0}’ </p>
+<p>   split(s,array,[r])：以r为分隔符，切割字符串s，并将切割后的结果保存至array所 表示的数组中，第一个索引值为1,第二个索引值为2,…  </p>
+<pre><code class="hljs">  netstat -tn | awk &#39;/^tcp\&gt;/&#123;split($5,ip,&quot;:&quot;);count[ip[1]]++&#125;   
+      END&#123;for (i in count) &#123;print i,count[i]&#125;&#125;&#39; 
 </code></pre>
 </li>
-<li><pre><code class="hljs">  取反
+<li><p>自定义函数格式：  </p>
+<pre><code class="hljs">  function name ( parameter, parameter,  ... ) &#123; 
+      statements                         
+      return expression  
+  &#125; 
+</code></pre>
+</li>
+<li><p>示例：  </p>
+<p>  cat fun.awk  </p>
+<pre><code class="hljs">  function max(x,y) &#123;   
+  
+      x&gt;y?var=x:var=y   
+      
+      return var  
+      
+      &#125;  
+      
+      BEGIN&#123;a=3;b=2;print max(a,b)&#125;             
+      
+      awk -f fun.awk
 </code></pre>
 </li>
 </ul>
-<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs coffeescript">[root@CentOS8 data]<span class="hljs-comment"># awk &#x27;!/^UUID/&#123;print $0&#125;&#x27; /etc/fstab </span><br><br><span class="hljs-comment">#</span><br><span class="hljs-comment"># /etc/fstab</span><br><span class="hljs-comment"># Created by anaconda on Wed Sep 25 20:03:53 2019</span><br><span class="hljs-comment">#</span><br><span class="hljs-comment"># Accessible filesystems, by reference, are maintained under &#x27;/dev/disk/&#x27;.</span><br><span class="hljs-comment"># See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info.</span><br><span class="hljs-comment">#</span><br><span class="hljs-comment"># After editing this file, run &#x27;systemctl daemon-reload&#x27; to update systemd</span><br><span class="hljs-comment"># units generated from this file.</span><br><span class="hljs-comment">#</span><br></code></pre></td></tr></table></figure>
-<ul>
-<li><pre><code class="hljs">  Relational expression:关系表达式
-
-  [root@CentOS8 data]# awk -F: &#39;$NF==&quot;/bin/bash&quot;&#123;print $1,$NF&#125;&#39; /etc/passwd
-  root /bin/bash
-  td /bin/bash
-  mage /bin/bash
+<h1 id="awk中调用shell命令"><a href="#awk中调用shell命令" class="headerlink" title="awk中调用shell命令"></a><strong>awk中调用shell命令</strong></h1><ul>
+<li><p>system命令 </p>
+</li>
+<li><p>空格是awk中的字符串连接符，如果system中需要使用awk中的变量可以使用 空格分隔，或者说除了awk的变量外其他一律用””引用起来</p>
+<p>awk ‘BEGIN{system(“hostname”) }’   </p>
+<p>awk ‘BEGIN{score&#x3D;100; system(“echo  your score is “ score) }’</p>
+</li>
+</ul>
+<h1 id="awk脚本"><a href="#awk脚本" class="headerlink" title="awk脚本"></a><strong>awk脚本</strong></h1><ul>
+<li><p>将awk程序写成脚本，直接调用或执行 </p>
+</li>
+<li><p>示例：       </p>
+<p>  cat f1.awk  </p>
+<pre><code class="hljs">  &#123;if($3&gt;=1000)print $1,$3&#125;        
+  
+  awk -F: -f f1.awk /etc/passwd
 </code></pre>
+</li>
+</ul>
+<h1 id="向awk脚本传递参数"><a href="#向awk脚本传递参数" class="headerlink" title="向awk脚本传递参数"></a><strong>向awk脚本传递参数</strong></h1><ul>
+<li><p>格式：  </p>
+<p>  awkfile  var&#x3D;value var2&#x3D;value2… Inputfile </p>
+</li>
+<li><p>注意：在BEGIN过程中不可用。直到首行输入完成以后，变量才可用。可以通 过-v 参数，让awk在执行BEGIN之前得到变量的值。命令行中每一个指定的变 量都需要一个-v参数 </p>
+</li>
+<li><p>示例：  </p>
+<p>  cat  test.awk       </p>
+<p>  #!&#x2F;bin&#x2F;awk –f    </p>
+<p>  {if($3 &gt;&#x3D;min &amp;&amp; $3&lt;&#x3D;max)print $1,$3}   </p>
+<p>  chmod +x test.awk  </p>
+<p>  test.awk -F: min&#x3D;100 max&#x3D;200  &#x2F;etc&#x2F;passwd</p>
 </li>
 </ul>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
@@ -1183,8 +1206,8 @@ color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Awk 示例</div>
-      <div>https://mtdlive.github.io/p/5c44.html</div>
+      <div>Awk 命令</div>
+      <div>https://mtdlive.github.io/p/awk.html</div>
     </div>
     <div class="license-meta">
       
@@ -1196,7 +1219,7 @@ color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年10月23日</div>
+          <div>2022年10月22日</div>
         </div>
       
       
@@ -1228,9 +1251,9 @@ color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/p/23b0.html" title="Docker部署">
+                      <a href="/p/awk-Example.html" title="Awk 示例">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Docker部署</span>
+                        <span class="hidden-mobile">Awk 示例</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -1238,8 +1261,8 @@ color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com
                   <article class="post-next col-6">
                     
                     
-                      <a href="/p/428a.html" title="Awk 命令">
-                        <span class="hidden-mobile">Awk 命令</span>
+                      <a href="/p/bash.html" title="Bash变量">
+                        <span class="hidden-mobile">Bash变量</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -1349,18 +1372,18 @@ color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com
     
       
       
-        <a href="/p/428a.html" title="Awk 命令"
+        <a href="/p/awk.html" title="Awk 命令"
            class="list-group-item list-group-item-action
-           ">
+           active">
           <span class="category-post">Awk 命令</span>
         </a>
       
     
       
       
-        <a href="/p/5c44.html" title="Awk 示例"
+        <a href="/p/awk-Example.html" title="Awk 示例"
            class="list-group-item list-group-item-action
-           active">
+           ">
           <span class="category-post">Awk 示例</span>
         </a>
       

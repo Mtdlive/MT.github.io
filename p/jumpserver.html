@@ -16,23 +16,25 @@
   <meta name="author" content="Mtdlive">
   <meta name="keywords" content="">
   
-    <meta name="description" content="终端变量自定义及 vim 编辑器相关配置内容">
+    <meta name="description" content="centos jumpserver服务脚本一键部署">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Bash变量">
-<meta property="og:url" content="https://mtdlive.github.io/p/5137.html">
+<meta property="og:title" content="Jumpserver部署">
+<meta property="og:url" content="https://mtdlive.github.io/p/jumpserver.html">
 <meta property="og:site_name" content="Mtdlive-Platform">
-<meta property="og:description" content="终端变量自定义及 vim 编辑器相关配置内容">
+<meta property="og:description" content="centos jumpserver服务脚本一键部署">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-10-21T06:19:54.000Z">
-<meta property="article:modified_time" content="2023-04-28T15:14:24.127Z">
+<meta property="og:image" content="https://mtdlive.github.io/img/jumpserver.png">
+<meta property="article:published_time" content="2022-12-06T05:55:35.000Z">
+<meta property="article:modified_time" content="2023-04-28T15:22:45.397Z">
 <meta property="article:author" content="Mtdlive">
 <meta property="article:tag" content="linux">
-<meta property="article:tag" content="bash">
+<meta property="article:tag" content="jumpserver">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mtdlive.github.io/img/jumpserver.png">
   
   
   
-  <title>Bash变量 - Mtdlive-Platform</title>
+  <title>Jumpserver部署 - Mtdlive-Platform</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -429,13 +431,13 @@ color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/head-4.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/img/head-2.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Bash变量"></span>
+            <span id="subtitle" data-typed-text="Jumpserver部署"></span>
           
         </div>
 
@@ -446,8 +448,8 @@ color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-10-21 14:19" pubdate>
-          2022年10月21日 下午
+        <time datetime="2022-12-06 13:55" pubdate>
+          2022年12月6日 下午
         </time>
       </span>
     
@@ -458,7 +460,7 @@ color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          4.2k 字
+          6.1k 字
         
       </span>
     
@@ -469,7 +471,7 @@ color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com
         
         
         
-          36 分钟
+          51 分钟
         
       </span>
     
@@ -757,48 +759,88 @@ color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Bash变量</h1>
+            <h1 style="display: none">Jumpserver部署</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="bashrc-x2F-vimrc"><a href="#bashrc-x2F-vimrc" class="headerlink" title="bashrc&#x2F;vimrc"></a>bashrc&#x2F;vimrc</h1><p>*d&#x3D;”hitokoto”&gt;获取中…</p></p>
+                <p id="hitokoto">获取中...</p>
 <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
 
 <hr>
-<p>vim &#x2F;root&#x2F;.vimrc</p>
-<div class='spoiler collapsed'>
-    <div class='spoiler-title'>
-        代码折叠，点击展开
-    </div>
-    <div class='spoiler-content'>
-        <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><code class="hljs `bash">set ignorecase<br>set cursorline<br>set autoindent<br>autocmd BufNewFile *.sh exec &quot;:call SetTitle()&quot;<br>func SetTitle()<br>	if expand(&quot;%:e&quot;) == &#x27;sh&#x27;<br>	call setline(1,&quot;#!/bin/bash&quot;)<br>	call setline(2,&quot;###########################################&quot;)<br>	call setline(3,&quot;#Author: Mxxxxxia                         ##&quot;)<br>	call setline(4,&quot;#QQ： 1xxxxxxx59                          #####&quot;)<br>	call setline(5,&quot;#Date： &quot;.strftime(&quot;%Y-%m-%d               &quot;))<br>	call setline(6,&quot;#Mage Education:   Mxxxxxxxxx             ###############&quot;)<br>	call setline(7,&quot;#FileName： &quot;.expand(&quot;%&quot;))<br>	call setline(8,&quot;#URL： https://Mtdia.github.io            #####&quot;)<br>	call setline(9,&quot;#Description： The test script            ##&quot;)<br>	call setline(10,&quot;###########################################&quot;)<br>	call setline(11,&quot;&quot;)<br>	endif<br>	endfunc<br>	autocmd BufNewFile * normal G<br><br>set hlsearch                    &quot;文本文件中 vim 搜索关键词高亮显示<br>set clipboard=unnamed           &quot; 设置vim中默认使用选择缓冲区寄存器,y复制,p粘贴<br>set pastetoggle=&lt;F1&gt;	        &quot; 斩杀复制粘贴时产生的恶心的缩进<br>set ai                          &quot; 自动缩进，新行与前面的行保持—致的自动空格<br>set cursorline                  &quot; 显示光标行<br>set aw                          &quot; 自动写，转入shell或使用：n编辑其他文件时，当前的缓冲区被写入<br>set flash                       &quot; 在出错处闪烁但不呜叫(缺省)<br>set ic                          &quot; 在查询及模式匹配时忽赂大小写<br>set number                      &quot; 屏幕左边显示行号<br>set showmatch                   &quot; 显示括号配对，当键入“]”“)”时，高亮度显示匹配的括号<br>set showmode                    &quot; 处于文本输入方式时加亮按钮条中的模式指示器<br>set warn                        &quot; 对文本进行了新的修改后，离开shell时系统给出显示(缺省)<br>set ws                          &quot; 在搜索时如到达文件尾则绕回文件头继续搜索<br>set wrap                        &quot; 长行显示自动折行<br>colorscheme evening             &quot; 设定背景为夜间模式<br>filetype plugin on              &quot; 自动识别文件类型，自动匹配对应的, “文件类型Plugin.vim”文件，使用缩进定义文件<br>set autoindent                  &quot; 设置自动缩进：即每行的缩进值与上一行相等；使用 noautoindent 取消设置<br>set cindent                     &quot; 以C/C++的模式缩进<br>set noignorecase                &quot; 默认区分大小写<br>set ruler                       &quot; 打开状态栏标尺<br>set scrolloff=5                 &quot; 设定光标离窗口上下边界 5 行时窗口自动滚动<br>set shiftwidth=4                &quot; 设定 &lt;&lt; 和 &gt;&gt; 命令移动时的宽度为 4<br>set softtabstop=4               &quot; 使得按退格键时可以一次删掉 4 个空格,不足 4 个时删掉所有剩下的空格）<br>set tabstop=4                   &quot; 设定 tab 长度为 4<br>set wrap                        &quot; 自动换行显示<br>syntax enable<br>syntax on                       &quot; 自动语法高亮<br>set autoindent                  &quot;自动对齐<br>set smartindent                 &quot;智能对齐<br>set mouse=a                     &quot;使用鼠标<br>&quot;set mouse=v                    &quot;使用鼠标选定复制<br>&quot;inoremap ( ()&lt;ESC&gt;i            &quot;括号自动补齐&quot;&gt;<br>&quot;inoremap [ []&lt;ESC&gt;i<br>&quot;inoremap &#123; &#123;&#125;&lt;ESC&gt;i<br>&quot;inoremap &lt; &lt;&gt;&lt;ESC&gt;i<br></code></pre></td></tr></table></figure>
-
-    </div>
-</div>
+<p>@<a href="%E7%9B%AE%E5%BD%95">toc</a></p>
+<hr>
+<h2 id="参考信息"><a href="#参考信息" class="headerlink" title="参考信息"></a>参考信息</h2><p><strong>当前版本：CentOS7.9</strong></p>
+<table>
+<thead>
+<tr>
+<th>主机</th>
+<th>IP</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Jumpserver服务器</td>
+<td>10.20.0.16</td>
+</tr>
+<tr>
+<td>资产主机</td>
+<td>10.20.0.15</td>
+</tr>
+</tbody></table>
+<p>#执行脚本前请确保以下配置达标</p>
+<div>
+            <input type="checkbox" disabled checked="checked">访问外网正常
+          </div>
+<div>
+            <input type="checkbox" disabled checked="checked">内存>=4GB
+          </div>
+<div>
+            <input type="checkbox" disabled checked="checked">处理器>=4
+          </div>
+<div>
+            <input type="checkbox" disabled checked="checked">硬盘>=50GB
+          </div>
+<div>
+            <input type="checkbox" disabled checked="checked">关闭SELINUX
+          </div>
+<div>
+            <input type="checkbox" disabled checked="checked">关闭防火墙
+          </div>
 
 <hr>
-<p>vim &#x2F;root&#x2F;.bashrc</p>
-<div class='spoiler collapsed'>
-    <div class='spoiler-title'>
-        代码折叠，点击展开
-    </div>
-    <div class='spoiler-content'>
-        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">alias</span> lll=<span class="hljs-string">&#x27;ls -lAFhi&#x27;</span><br><span class="hljs-built_in">alias</span> ll=<span class="hljs-string">&#x27;ls -lAFh&#x27;</span><br><span class="hljs-built_in">alias</span> l=<span class="hljs-string">&#x27;ls -aF&#x27;</span><br><span class="hljs-built_in">alias</span> ld=<span class="hljs-string">&#x27;ls -ldh&#x27;</span><br><span class="hljs-built_in">alias</span> la=<span class="hljs-string">&#x27;ls -A&#x27;</span><br><span class="hljs-built_in">alias</span> cdd=<span class="hljs-string">&#x27;cd /data/&#x27;</span><br><span class="hljs-built_in">alias</span> cde=<span class="hljs-string">&#x27;cd /etc/&#x27;</span><br><span class="hljs-built_in">alias</span> cdh=<span class="hljs-string">&#x27;cd /home/&#x27;</span><br><br><span class="hljs-built_in">alias</span> c=clear<br><span class="hljs-built_in">alias</span> d=<span class="hljs-string">&#x27;date +%F/%X&#x27;</span><br>HISTTIMEFORMAT=<span class="hljs-string">&#x27;%F %T  &lt;====&gt;  &#x27;</span><br>HISTIGNORE=<span class="hljs-string">&#x27;ignoredups,ignorespace&#x27;</span><br><span class="hljs-comment"># PS1=&#x27;\[\e[36;40m\][\u@\h \W]\$\e[m &#x27;  </span><br><br><span class="hljs-comment"># PS1=&#x27;$&#123;debian_chroot:+($debian_chroot)&#125;\[\033[01;31;1m\]\u\[\033[00;33;1m\]@\[\033[01;34;1m\]\h\[\033[00;33;1m\]:\[\033[00;32;1m\]\w \[\033[01;36;1m\]\$ \[\033[0;35;1m\]&#x27; </span><br><br><span class="hljs-comment"># PS1=&#x27;$&#123;debian_chroot:+($debian_chroot)&#125;\[\033[0;35;1m\][\[\033[01;31;1m\]\u\[\033[00;33;1m\]@\[\033[01;34;1m\]\h\[\033[00;33;1m\]: \[\033[00;32;1m\]\w\[\033[0;35;1m\]]\033[01;36;1m\]\$ \[\033[0;35;3m\]&#x27;</span><br><br><span class="hljs-comment">#PS1=&#x27;$&#123;debian_chroot:+($debian_chroot)&#125;\[\033[0;35;1m\][\[\033[01;31;1m\]\u\[\033[00;33;1m\]@\[\033[01;34;1m\]\h\[\033[00;33;1m\]: \[\033[00;32;1m\]\w \[\033[01;39;1m\]\A \[\033[0;35;1m\]]\[\033[01;36;1m\]\$ \[\033[01;36;1m\]==&gt; \[\033[0;35;0m\]&#x27;</span><br></code></pre></td></tr></table></figure>
-    </div>
-</div>
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">使文件生效<br>退出vim后，输入：<span class="hljs-built_in">source</span> ~/.bashrc 或者 . ~./bashrc<br></code></pre></td></tr></table></figure>
+<p>#自动化部署脚本<code>quick_start</code>内容如下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#cat quick_start.sh</span><br><span class="hljs-comment">#!/usr/bin/env bash</span><br><span class="hljs-comment">#</span><br><br>Version=v2.28.1<br><br><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">install_soft</span></span>() &#123;<br>    <span class="hljs-keyword">if</span> <span class="hljs-built_in">command</span> -v dnf &gt; /dev/null; <span class="hljs-keyword">then</span><br>      dnf -q -y install <span class="hljs-string">&quot;<span class="hljs-variable">$1</span>&quot;</span><br>    <span class="hljs-keyword">elif</span> <span class="hljs-built_in">command</span> -v yum &gt; /dev/null; <span class="hljs-keyword">then</span><br>      yum -q -y install <span class="hljs-string">&quot;<span class="hljs-variable">$1</span>&quot;</span><br>    <span class="hljs-keyword">elif</span> <span class="hljs-built_in">command</span> -v apt &gt; /dev/null; <span class="hljs-keyword">then</span><br>      apt-get -qqy install <span class="hljs-string">&quot;<span class="hljs-variable">$1</span>&quot;</span><br>    <span class="hljs-keyword">elif</span> <span class="hljs-built_in">command</span> -v zypper &gt; /dev/null; <span class="hljs-keyword">then</span><br>      zypper -q -n install <span class="hljs-string">&quot;<span class="hljs-variable">$1</span>&quot;</span><br>    <span class="hljs-keyword">elif</span> <span class="hljs-built_in">command</span> -v apk &gt; /dev/null; <span class="hljs-keyword">then</span><br>      apk add -q <span class="hljs-string">&quot;<span class="hljs-variable">$1</span>&quot;</span><br>      <span class="hljs-built_in">command</span> -v gettext &gt;/dev/null || &#123;<br>      apk add -q gettext-dev python3<br>    &#125;<br>    <span class="hljs-keyword">else</span><br>      <span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;[\033[31m ERROR \033[0m] <span class="hljs-variable">$1</span> command not found, Please install it first&quot;</span><br>      <span class="hljs-built_in">exit</span> 1<br>    <span class="hljs-keyword">fi</span><br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">prepare_install</span></span>() &#123;<br>  <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> curl wget tar iptables; <span class="hljs-keyword">do</span><br>    <span class="hljs-built_in">command</span> -v <span class="hljs-variable">$i</span> &amp;&gt;/dev/null || install_soft <span class="hljs-variable">$i</span><br>  <span class="hljs-keyword">done</span><br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">get_installer</span></span>() &#123;<br>  <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;download install script to /opt/jumpserver-installer-<span class="hljs-variable">$&#123;Version&#125;</span>&quot;</span><br>  <span class="hljs-built_in">cd</span> /opt || <span class="hljs-built_in">exit</span> 1<br>  <span class="hljs-keyword">if</span> [ ! -d <span class="hljs-string">&quot;/opt/jumpserver-installer-<span class="hljs-variable">$&#123;Version&#125;</span>&quot;</span> ]; <span class="hljs-keyword">then</span><br>    <span class="hljs-built_in">timeout</span> 60 wget -qO jumpserver-installer-<span class="hljs-variable">$&#123;Version&#125;</span>.tar.gz https://github.com/jumpserver/installer/releases/download/<span class="hljs-variable">$&#123;Version&#125;</span>/jumpserver-installer-<span class="hljs-variable">$&#123;Version&#125;</span>.tar.gz || &#123;<br>      <span class="hljs-built_in">rm</span> -f /opt/jumpserver-installer-<span class="hljs-variable">$&#123;Version&#125;</span>.tar.gz<br>      <span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;[\033[31m ERROR \033[0m] Failed to download jumpserver-installer-<span class="hljs-variable">$&#123;Version&#125;</span>&quot;</span><br>      <span class="hljs-built_in">exit</span> 1<br>    &#125;<br>    tar -xf /opt/jumpserver-installer-<span class="hljs-variable">$&#123;Version&#125;</span>.tar.gz -C /opt || &#123;<br>      <span class="hljs-built_in">rm</span> -rf /opt/jumpserver-installer-<span class="hljs-variable">$&#123;Version&#125;</span><br>      <span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;[\033[31m ERROR \033[0m] Failed to unzip jumpserver-installer-<span class="hljs-variable">$&#123;Version&#125;</span>&quot;</span><br>      <span class="hljs-built_in">exit</span> 1<br>    &#125;<br>    <span class="hljs-built_in">rm</span> -f /opt/jumpserver-installer-<span class="hljs-variable">$&#123;Version&#125;</span>.tar.gz<br>  <span class="hljs-keyword">fi</span><br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">config_installer</span></span>() &#123;<br>  <span class="hljs-built_in">cd</span> /opt/jumpserver-installer-<span class="hljs-variable">$&#123;Version&#125;</span> || <span class="hljs-built_in">exit</span> 1<br>  sed -i <span class="hljs-string">&quot;s/VERSION=.*/VERSION=<span class="hljs-variable">$&#123;Version&#125;</span>/g&quot;</span> /opt/jumpserver-installer-<span class="hljs-variable">$&#123;Version&#125;</span>/static.env<br>  ./jmsctl.sh install<br>  ./jmsctl.sh start<br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-function"><span class="hljs-title">main</span></span>()&#123;<br>  <span class="hljs-keyword">if</span> [[ <span class="hljs-string">&quot;<span class="hljs-variable">$&#123;OS&#125;</span>&quot;</span> == <span class="hljs-string">&#x27;Darwin&#x27;</span> ]]; <span class="hljs-keyword">then</span><br>    <span class="hljs-built_in">echo</span><br>    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Unsupported Operating System Error&quot;</span><br>    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;macOS installer please see: https://github.com/jumpserver/Dockerfile&quot;</span><br>    <span class="hljs-built_in">exit</span> 1<br>  <span class="hljs-keyword">fi</span><br>  prepare_install<br>  get_installer<br>  config_installer<br>&#125;<br><br>main<br><br></code></pre></td></tr></table></figure>
 
 <hr>
-<div class='spoiler collapsed'>
-    <div class='spoiler-title'>
-        代码折叠，点击展开
-    </div>
-    <div class='spoiler-content'>
-        <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><code class="hljs html">颜色代码:<br>字背景颜色: 40–49 字体颜色: 30—39<br>40: 黑 　　　　　　 30: 黑<br>41: 红 　　　　　　 31: 红<br>42: 绿 　　　　　　 32: 绿<br>43: 黄 　　　　　　 33: 黄<br>44: 蓝 　　　　　　 34: 蓝<br>45: 紫 　　　　　　 35: 紫<br>46: 深绿 　　　　　　 36: 深绿<br>47: 白色 　　　　　　 37: 白色<br><br>ANSI控制码:<br>\033[0m 关闭所有属性<br>\033[1m 设置高亮度<br>\033[3m 斜体字符<br>\033[4m 下划线<br>\033[5m 闪烁<br>\033[7m 反显<br>\033[8m 消隐<br>\033[30m – \033[37m 设置前景色<br>\033[40m – \033[47m 设置背景色<br>\033[nA 光标上移n行<br>\03[nB 光标下移n行<br>\033[nC 光标右移n行<br>\033[nD 光标左移n行<br><br>默认的特殊符号所代表的意义：<br>\d ：代表日期，格式为weekday month date，例如：“Mon Aug 1”<br>\H ：完整的主机名称。例如：我的机器名称为：fc4.linux，则这个名称就是fc4.linux<br>\h ：仅取主机的第一个名字，如上例，则为fc4，.linux则被省略<br>\t ：显示时间为24小时格式，如：HH：MM：SS<br>\T ：显示时间为12小时格式<br>\A ：显示时间为24小时格式：HH：MM<br>\u ：当前用户的账号名称<br>\v ：BASH的版本信息<br>\w ：完整的工作目录名称。家目录会以 ~代替<br>\W ：利用basename取得工作目录名称，所以只会列出最后一个目录<br># ：下达的第几个命令<br>$ ：提示字符，如果是root时，提示符为：# ，普通用户则为：$<br><br>echo -e &quot;\033[32m输出绿色字符串\033[0m&quot;<br>echo -e &quot;\033[43;35m输出黄色背景绿色字符串\033[0m&quot;<br>echo -e &quot;\033[1;43;35m输出高亮黄色背景绿色字符串\033[0m&quot;<br>echo -e &quot;\033[5;43;35m输出闪烁黄色背景绿色字符串\033[0m&quot;<br></code></pre></td></tr></table></figure>
-    </div>
-</div>
+<h2 id="部署开始"><a href="#部署开始" class="headerlink" title="部署开始"></a>部署开始</h2><p><a class="btn" target="_blank" rel="noopener" href="https://github.com/jumpserver/jumpserver/releases/download/v2.28.1/quick_start.sh" title="点击跳转">quick_start.sh</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#若果脚本拉不下来也可以直接复制我上面的 quick_start.sh</span><br>[root@C7-6 data]<span class="hljs-comment"># curl -sSL https://github.com/jumpserver/jumpserver/releases/download/v2.28.1/quick_start.sh</span><br><span class="hljs-comment">#github里直接复制粘贴的命令有个缺陷，docker未配置加速，拉镜像慢到跑不动了</span><br><span class="hljs-comment">#建议在执行脚本进行到拉取镜像时手动退出，并配置镜像加速后再重新执行脚本</span><br><br><span class="hljs-comment">#将此行加入 /etc/docker/daemon.json</span><br> <span class="hljs-string">&quot;registry-mirrors&quot;</span>: [<span class="hljs-string">&quot;https://dl0ygawi.mirror.aliyuncs.com&quot;</span>],<br><span class="hljs-comment">#记得重启docker</span><br>sudo systemctl daemon-reload &amp;&amp; sudo systemctl restart docker<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br></pre></td><td class="code"><pre><code class="hljs bash">[root@C7-6 data]<span class="hljs-comment"># bash quick_start.sh</span><br><br>……………..<span class="hljs-comment"># 脚本执行时间很长............</span><br>download install script to /opt/jumpserver-installer-v2.28.1<br><br><br>       ██╗██╗   ██╗███╗   ███╗██████╗ ███████╗███████╗██████╗ ██╗   ██╗███████╗██████╗<br>       ██║██║   ██║████╗ ████║██╔══██╗██╔════╝██╔════╝██╔══██╗██║   ██║██╔════╝██╔══██╗<br>       ██║██║   ██║██╔████╔██║██████╔╝███████╗█████╗  ██████╔╝██║   ██║█████╗  ██████╔╝<br>  ██   ██║██║   ██║██║╚██╔╝██║██╔═══╝ ╚════██║██╔══╝  ██╔══██╗╚██╗ ██╔╝██╔══╝  ██╔══██╗<br>  ╚█████╔╝╚██████╔╝██║ ╚═╝ ██║██║     ███████║███████╗██║  ██║ ╚████╔╝ ███████╗██║  ██║<br>   ╚════╝  ╚═════╝ ╚═╝     ╚═╝╚═╝     ╚══════╝╚══════╝╚═╝  ╚═╝  ╚═══╝  ╚══════╝╚═╝  ╚═╝<br><br>								   Version:  v2.28.1  <br><br>1. Check Configuration File<br>Path to Configuration file: /opt/jumpserver/config<br>/opt/jumpserver/config/config.txt 	 [ √ ]<br>/opt/jumpserver/config/nginx/cert/server.crt  	 [ √ ]<br>/opt/jumpserver/config/nginx/cert/server.key  	 [ √ ]<br>complete<br><br>&gt;&gt;&gt; Install and Configure Docker<br>1. Install Docker<br>complete<br><br>2. Configure Docker<br>complete<br><br>3. Start Docker<br>complete<br><br>&gt;&gt;&gt; Loading Docker Image<br>[jumpserver/redis:6.2]<br>6.2: Pulling from jumpserver/redis<br>a603fa5e3b41: Pull complete <br>77631c3ef092: Pull complete <br>ed3847cf62b8: Pull complete <br>c35fa6b24d23: Pull complete <br>715a5ac967d7: Pull complete <br>0a26dfd13d55: Pull complete <br>Digest: sha256:a6349e1a6a8b317dbd9e196eb3f4c44b304f7fb899e7d2af7b0211112bccd952<br>Status: Downloaded newer image <span class="hljs-keyword">for</span> jumpserver/redis:6.2<br>docker.io/jumpserver/redis:6.2<br>..............................................<br><span class="hljs-comment">#此处提示是否自动以自定义设置服务相关信息,看个人喜好设置</span><br>Digest: sha256:a7065804f135f3d1fef15412adec99d62475e42e48c0ec6934d7fc4b44aae1ad<br>Status: Downloaded newer image <span class="hljs-keyword">for</span> jumpserver/web:v2.28.1<br>docker.io/jumpserver/web:v2.28.1<br><br>complete<br><br>&gt;&gt;&gt; Install and Configure JumpServer<br>1. Configure Private Key<br>SECRETE_KEY:     ZjQzODRkNTYtNTY1Ny1hNTIyLTBlMmYtNzEzMDVmYTNlZDZk<br>BOOTSTRAP_TOKEN: ZjQzODRkNTYtNTY1Ny1hNTIy<br>complete<br><br>2. Configure Persistent Directory<br>Do you need custom persistent store, will use the default directory /data/jumpserver? (y/n)  (default n): n<br>complete<br><br>3. Configure MySQL<br>Do you want to use external MySQL? (y/n)  (default n): n<br>complete<br><br>4. Configure Redis<br>Do you want to use external Redis? (y/n)  (default n): n<br>complete<br><br>5. Configure External Port<br>Do you need to customize the JumpServer external port? (y/n)  (default n): <br>.................................<br><span class="hljs-comment">#当出现此行时表示安装成功，访问地址和账户信息以打印在下方</span><br>&gt;&gt;&gt; The Installation is Complete<br>1. You can use the following <span class="hljs-built_in">command</span> to start, and <span class="hljs-keyword">then</span> visit<br><span class="hljs-built_in">cd</span> /opt/jumpserver-installer-v2.28.1<br>./jmsctl.sh start<br><br>2. Other management commands<br>./jmsctl.sh stop<br>./jmsctl.sh restart<br>./jmsctl.sh backup<br>./jmsctl.sh upgrade<br>For more commands, you can enter ./jmsctl.sh --<span class="hljs-built_in">help</span> to understand<br><br>3. Web access<br>http://10.20.0.16:80<br>Default username: admin  Default password: admin<br><br>4. SSH/SFTP access<br>ssh -p2222 admin@10.20.0.16<br>sftp -P2222 admin@10.20.0.16<br><br>5. More information<br>Official Website: https://www.jumpserver.org/<br>Documentation: https://docs.jumpserver.org/<br><br><br>[+] Running 8/8<br> ⠿ Container jms_redis   Healthy                                                                                          2.0s<br> ⠿ Container jms_mysql   Healthy                                                                                          2.0s<br> ⠿ Container jms_core    Healthy                                                                                         28.7s<br> ⠿ Container jms_web     Started                                                                                         29.5s<br> ⠿ Container jms_celery  Started                                                                                         29.5s<br> ⠿ Container jms_lion    Started                                                                                         29.7s<br> ⠿ Container jms_koko    Started                                                                                         29.7s<br> ⠿ Container jms_magnus  Started                                                                                         42.3s<br></code></pre></td></tr></table></figure>
+
+<hr>
+<p>#登录 jumpserver web 界面 ，账户在上图可看<br>#创建普通用户<br><img src="https://img-blog.csdnimg.cn/20200703155615702.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1c2hhbnNhbw==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" lazyload><br><img src="https://img-blog.csdnimg.cn/20200703155637153.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1c2hhbnNhbw==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" lazyload></p>
+<hr>
+<p>#创建管理用户<br>#管理用户应当是资产主机上的root管理员或者是在资产主机上拥有 <code>NOPASSWD: ALL sudo</code> 权限的用户<br>#jumpserver会使用该用户去推送系统用户以及获取资产硬件信息等，因此若该用户的密钥配置错误将会导致无法连接资产主机<br><img src="https://img-blog.csdnimg.cn/20200703155755546.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1c2hhbnNhbw==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" lazyload></p>
+<hr>
+<p>#创建系统用户<br>#该用户是jumpserver跳转登录资产主机时使用的用户<br><img src="https://img-blog.csdnimg.cn/20200703155838607.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1c2hhbnNhbw==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" lazyload><br><img src="https://img-blog.csdnimg.cn/20200703155853724.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1c2hhbnNhbw==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" lazyload></p>
+<hr>
+<p>#创建资产<br><img src="https://img-blog.csdnimg.cn/20200703155932353.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1c2hhbnNhbw==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" lazyload><br><img src="https://img-blog.csdnimg.cn/20200703155946436.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1c2hhbnNhbw==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://img-blog.csdnimg.cn/20200703160009759.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1c2hhbnNhbw==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" lazyload></p>
+<hr>
+<p>#资产授权<br><img src="https://img-blog.csdnimg.cn/20200703160028355.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1c2hhbnNhbw==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" lazyload><br><img src="https://img-blog.csdnimg.cn/20200703160051251.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1c2hhbnNhbw==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" lazyload></p>
+<hr>
+<p>#登录mahuateng 用户<br><img src="https://img-blog.csdnimg.cn/20200703160114330.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1c2hhbnNhbw==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://img-blog.csdnimg.cn/20200703160124821.png" srcset="/img/loading.gif" lazyload></p>
+<hr>
+<p>#返回admin用户，配置命令过滤<br><img src="https://img-blog.csdnimg.cn/20200703160146362.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1c2hhbnNhbw==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://img-blog.csdnimg.cn/20200703160152961.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1c2hhbnNhbw==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://img-blog.csdnimg.cn/20200703160201839.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1c2hhbnNhbw==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://img-blog.csdnimg.cn/2020070316021226.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1c2hhbnNhbw==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" lazyload></p>
+<hr>
+<p>#更新系统用户配置<br><img src="https://img-blog.csdnimg.cn/20200703160224699.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1c2hhbnNhbw==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://img-blog.csdnimg.cn/20200703160231968.png" srcset="/img/loading.gif" lazyload><br><img src="https://img-blog.csdnimg.cn/20200703160240440.png" srcset="/img/loading.gif" lazyload></p>
+<hr>
+<p>#登录mahuateng 用户<br><img src="https://img-blog.csdnimg.cn/20200703160301579.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2R1c2hhbnNhbw==,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" lazyload></p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
                 
               </div>
@@ -822,7 +864,7 @@ color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com
   
     <span>></span>
     
-  <a href="/categories/linux/bash/" class="category-chain-item">bash</a>
+  <a href="/categories/linux/jumpserver/" class="category-chain-item">jumpserver</a>
   
   
 
@@ -841,7 +883,7 @@ color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com
       
         <a href="/tags/linux/">#linux</a>
       
-        <a href="/tags/bash/">#bash</a>
+        <a href="/tags/jumpserver/">#jumpserver</a>
       
     </div>
   
@@ -853,8 +895,8 @@ color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Bash变量</div>
-      <div>https://mtdlive.github.io/p/5137.html</div>
+      <div>Jumpserver部署</div>
+      <div>https://mtdlive.github.io/p/jumpserver.html</div>
     </div>
     <div class="license-meta">
       
@@ -866,7 +908,7 @@ color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年10月21日</div>
+          <div>2022年12月6日</div>
         </div>
       
       
@@ -898,9 +940,9 @@ color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/p/428a.html" title="Awk 命令">
+                      <a href="/p/harbor.html" title="harbor Arm架构部署">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Awk 命令</span>
+                        <span class="hidden-mobile">harbor Arm架构部署</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -908,8 +950,8 @@ color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com
                   <article class="post-next col-6">
                     
                     
-                      <a href="/p/14e3.html" title="CentOS 函数">
-                        <span class="hidden-mobile">CentOS 函数</span>
+                      <a href="/p/ansible.html" title="Ansible相关操作">
+                        <span class="hidden-mobile">Ansible相关操作</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -993,7 +1035,7 @@ color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com
     
       
       
-        <a href="/p/14e3.html" title="CentOS 函数"
+        <a href="/p/function.html" title="CentOS 函数"
            class="list-group-item list-group-item-action
            ">
           <span class="category-post">CentOS 函数</span>
@@ -1002,7 +1044,7 @@ color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com
     
       
       
-        <a href="/p/1c14.html" title="CentOS安装"
+        <a href="/p/centos.html" title="CentOS安装"
            class="list-group-item list-group-item-action
            ">
           <span class="category-post">CentOS安装</span>
@@ -1011,7 +1053,7 @@ color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com
     
       
       
-        <a href="/p/eb1d.html" title="Linux基础命令"
+        <a href="/p/command.html" title="Linux基础命令"
            class="list-group-item list-group-item-action
            ">
           <span class="category-post">Linux基础命令</span>
@@ -1020,7 +1062,7 @@ color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com
     
       
       
-        <a href="/p/ea01.html" title="Ubuntu安装"
+        <a href="/p/ubuntu.html" title="Ubuntu安装"
            class="list-group-item list-group-item-action
            ">
           <span class="category-post">Ubuntu安装</span>
@@ -1055,7 +1097,7 @@ color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com
     
       
       
-        <a href="/p/e471.html" title="Ansible相关操作"
+        <a href="/p/ansible.html" title="Ansible相关操作"
            class="list-group-item list-group-item-action
            ">
           <span class="category-post">Ansible相关操作</span>
@@ -1072,17 +1114,17 @@ color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com
     
     
     <div class="category-sub row nomargin-x">
-      <a class="category-subitem 
+      <a class="category-subitem collapsed
           list-group-item category-item-action col-10 col-md-11 col-xm-11" title="bash"
         id="heading-d574d4bb40c84861791a694a999cce69" role="tab" data-toggle="collapse" href="#collapse-d574d4bb40c84861791a694a999cce69"
-        aria-expanded="true"
+        aria-expanded="false"
       >
         bash
         <span class="list-group-count">(1)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
-      <div class="category-collapse collapse show" id="collapse-d574d4bb40c84861791a694a999cce69"
+      <div class="category-collapse collapse " id="collapse-d574d4bb40c84861791a694a999cce69"
            role="tabpanel" aria-labelledby="heading-d574d4bb40c84861791a694a999cce69">
         
         
@@ -1092,9 +1134,9 @@ color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com
     
       
       
-        <a href="/p/5137.html" title="Bash变量"
+        <a href="/p/bash.html" title="Bash变量"
            class="list-group-item list-group-item-action
-           active">
+           ">
           <span class="category-post">Bash变量</span>
         </a>
       
@@ -1109,17 +1151,17 @@ color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com
     
     
     <div class="category-sub row nomargin-x">
-      <a class="category-subitem collapsed
+      <a class="category-subitem 
           list-group-item category-item-action col-10 col-md-11 col-xm-11" title="jumpserver"
         id="heading-9ef8fabd0bff81f7eff6f767c0878fe8" role="tab" data-toggle="collapse" href="#collapse-9ef8fabd0bff81f7eff6f767c0878fe8"
-        aria-expanded="false"
+        aria-expanded="true"
       >
         jumpserver
         <span class="list-group-count">(1)</span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
-      <div class="category-collapse collapse " id="collapse-9ef8fabd0bff81f7eff6f767c0878fe8"
+      <div class="category-collapse collapse show" id="collapse-9ef8fabd0bff81f7eff6f767c0878fe8"
            role="tabpanel" aria-labelledby="heading-9ef8fabd0bff81f7eff6f767c0878fe8">
         
         
@@ -1129,9 +1171,9 @@ color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com
     
       
       
-        <a href="/p/9d30.html" title="Jumpserver部署"
+        <a href="/p/jumpserver.html" title="Jumpserver部署"
            class="list-group-item list-group-item-action
-           ">
+           active">
           <span class="category-post">Jumpserver部署</span>
         </a>
       
