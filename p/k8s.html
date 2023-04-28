@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://mtdlive.github.io/img/k8s.png">
 <meta property="article:published_time" content="2022-10-27T06:43:54.000Z">
-<meta property="article:modified_time" content="2023-04-28T15:45:23.974Z">
+<meta property="article:modified_time" content="2023-04-28T15:47:27.345Z">
 <meta property="article:author" content="Mtdlive">
 <meta property="article:tag" content="docker">
 <meta property="article:tag" content="k8s">
@@ -471,7 +471,7 @@ color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com
         
         
         
-          71 分钟
+          70 分钟
         
       </span>
     
@@ -775,10 +775,10 @@ color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@glorious/demo@0.11.12/dist/gdemo.min.css">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css">
 <script src="//cdn.jsdelivr.net/npm/@glorious/demo@0.11.12/dist/gdemo.min.js"></script>
-<div id='demo-teriminal' style='height: 100px'></div>
+<div id='master' style='height: 90px'></div>
 <script>
-new GDemo('#demo-teriminal')
-  .openApp('terminal', {minHeight: '100px', windowTitle: 'Terminal', promptString: '$'})
+new GDemo('#master')
+  .openApp('terminal', {minHeight: '90px', windowTitle: 'Terminal', promptString: '#'})
   .command(`vim master_install<span class="token punctuation">.</span>sh`, {onCompleteDelay: 500})
   .command(`#脚本内容如下所示`, {onCompleteDelay: 500})
   .respond(``)
@@ -798,10 +798,10 @@ new GDemo('#demo-teriminal')
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@glorious/demo@0.11.12/dist/gdemo.min.css">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css">
 <script src="//cdn.jsdelivr.net/npm/@glorious/demo@0.11.12/dist/gdemo.min.js"></script>
-<div id='demo2-teriminal' style='height: 100px'></div>
+<div id='work' style='height: 90px'></div>
 <script>
-new GDemo('#demo2-teriminal')
-  .openApp('terminal', {minHeight: '100px', windowTitle: 'Terminal', promptString: '$'})
+new GDemo('#work')
+  .openApp('terminal', {minHeight: '90px', windowTitle: 'Terminal', promptString: '#'})
   .command(`vim worker_install<span class="token punctuation">.</span>sh`, {onCompleteDelay: 500})
   .command(`#脚本内容如下所示`, {onCompleteDelay: 500})
   .respond(``)
